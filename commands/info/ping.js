@@ -3,7 +3,7 @@ module.exports = {
     category: "info",
     permissions: [],
     devOnly: false,
-    run: async ({ bot, message, args }) => {
+    run: async ({ client, message, args }) => {
         message.reply("pong")
     }
 }

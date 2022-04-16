@@ -1,11 +1,11 @@
-const { getfiles } = require("../util/functions")
+const { getFiles } = require("../util/functions")
 
 module.exports = (bot, reload) => {
     const { client } = bot
 
-    let events = getfiles("./events/", ".js")
+    let events = getFiles("./events/", ".js")
 
-    if (events.length == 0) {
+    if (events.length === 0) {
         console.log("no events to load")
     }
 
@@ -43,7 +43,7 @@ function initEvents(bot) {
         triggerEventHandler(bot, "ready")
     })
 
-    client.on("messagecreate", () => {
-        triggerEventHandler(bot, "messagecreate")
+    client.on("messagecreate", (message) => {
+        triggerEventHandler(bot, "messagecreate", message)
     })
 }

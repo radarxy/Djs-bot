@@ -1,4 +1,4 @@
-const { getfiles } = require("../util/functions")
+const { getFiles } = require("../util/functions")
 const fs = require("fs")
 
 //const { category } = require("../commands/info/ping")
@@ -7,7 +7,7 @@ module.exports = (bot, reload) => {
     const { client } = bot
 
     fs.readdirSync("./commands/").forEach((category) => {
-        let commands = getfiles(`./commands/${category}`, ".js")
+        let commands = getFiles(`./commands/${category}`, ".js")
 
         commands.forEach((f) => {
             if (reload)

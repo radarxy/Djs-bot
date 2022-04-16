@@ -21,8 +21,8 @@ module.exports = {
         if (command.devOnly && !owners.includes(member.id))
             return message.reply("command only for bot owners")
 
-        if (command.permissions && member.permissions.missing(command.permissions))
-            return message.rely("you dont have permission to use this command")
+        if (command.permissions && member.permissions.missing(command.permissions).length!==0)
+            return message.reply("you dont have permission to use this command")
 
         try {
             await command.run({ ...bot, message, args })
